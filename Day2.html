@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            display: flex;
+            gap:100px;
+            /* background-color: #7a3636; */
+            width:60%; 
+            margin: auto;
+            padding: 20px;
+            border-radius:10px;
+            margin-top: 20px;
+             /* margin-bottom: 10px; */
+        }
+        .controls{
+            display: flex; 
+             flex-direction:column; 
+            gap:3px;
+
+        }
+        .card{
+            background-color:aqua;
+            border-radius: 10px;
+            padding-left:10px;
+            border: 3px solid #7a3636;
+        }
+        .nextcontainer{
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .main{
+            background-color: blue;
+            width:70%;
+            margin:auto;
+          
+            
+        }
+    </style>
+    <div class="main">
+        <div class="container">
+            <!--left side-->
+                <section class="controls">
+
+                     <h2>Update Variables</h2>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="Alex"/>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" value="32">
+
+                    <label for="vip">VPI stutus:</label>
+                    <input type="checkbox" id="vip" >
+     
+                    <label for="card">Card:</label>
+                    <input type="color" id="card">
+                </section> 
+
+   
+                 <!--right side-->
+                <section class="output">
+                    <h2>Live DOM Output</h2>
+                    <div id="idCard" class="card">
+                         <div class="card-header">
+                            <div class="card-body"> 
+                            <p id="cardName">Alex Walker</p>
+                             <p>Age: <span id="cardAge">28</span></p>
+                          <span id="vipBadge" class="badge"> VIP MENBER</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+   
+        </div>
+   <div class="nextcontainer">
+    <h2>Next Container</h2>
+   </div>
+   </div>
+</body>
+</html>

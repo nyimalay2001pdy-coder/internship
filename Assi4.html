@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        margin: 0;
+      }
+      .calculator {
+        background-color: antiquewhite;
+        padding: 30px;
+        border-radius: 10px;
+        width: 400px;
+        height: 250px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .cal {
+        margin-bottom: 15px;
+      }
+      .result {
+        padding: 12px;
+        border-radius: 5px;
+        text-align: left;
+        border: 2px solid #090909;
+        display: flex;
+       justify-content: space-between;
+       align-items: center;
+      }
+      input,
+      select {
+        padding: 6px;
+        font-size: 14px;
+      }
+      input {
+        width: 130px;
+      }
+      button {
+        width: 100%;
+        background-color: black;
+        color: aliceblue;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        margin-bottom: 20px;
+      }
+      .calculate {
+        width: 100%;
+        padding: 10px;
+      }
+      
+    </style>
+    <script>
+      function calculate() {
+        let n1 = parseFloat(document.getElementById("n1").value);
+        let n2 = parseFloat(document.getElementById("n2").value);
+        let op = document.getElementById("operator").value;
+
+        let result = 0;
+
+        if (op === "+") {
+          result = n1 + n2;
+        } else if (op === "-") {
+          result = n1 - n2;
+        } else if (op === "*") {
+          result = n1 * n2;
+        } else if (op === "/") {
+            result = n1 / n2;
+          }else if(op==="/"){
+            if(n2==0){
+              result.innerText="can'd divide by 0";
+              return;
+            }
+          }
+                    // } else{
+        //    document.getElementById("answer").innerHTML = "Can't Divided"; 
+        // }
+        document.getElementById("answer").innerText = result;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="calculator">
+      <h3>Mini Calculator</h3>
+      <div class="cal">
+        <input type="text" value="45" id="n1" />
+
+        <select id="operator">
+          <option>+</option>
+          <option>-</option>
+          <option>*</option>
+          <option>/</option>
+        </select>
+
+        <input type="text" value="45" id="n2" />
+      </div>
+
+      <button onclick="calculate()" class="calculate">Calculate Amount</button>
+      <div class="result">Result:<span id="answer">0</span></div>
+    </div>
+  </body>
+</html>

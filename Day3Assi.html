@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: darkturquoise;
+      padding: 20px;
+    }
+
+    .container {
+      width: 800px;
+      padding: 10px;
+      background-color: aliceblue;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: rgb(104, 84, 159);
+    }
+
+    .sub {
+      margin-bottom: 10px;
+      color: darkblue;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 10px;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: black;
+      color: antiquewhite;
+    }
+
+    .nav a {
+      text-decoration: none;
+      margin-left: 10px;
+      color: aliceblue;
+    }
+
+    .features {
+      display: flex;
+      margin-bottom: 20px;
+      gap: 30px;
+    }
+
+    .feature-box {
+      background-color: rgb(187, 209, 198);
+      flex: 1;
+      border-radius: 10px;
+      padding: 10px;
+      color: black;
+      text-align: center;
+    }
+
+    .main {
+      display: flex;
+      gap: 30px;
+    }
+
+    .left {
+      box-shadow: #82acdb;
+      border-radius: 10px;
+      padding: 10px;
+      color: darkblue;
+      width: 50%;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    .left h2 {
+      margin-bottom: 20px;
+      color: blue;
+      font-size: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      color: darkblue;
+      font-size: 14px;
+    }
+
+    select {
+      border: 1px solid #82acdb;
+      border-radius: 4px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .right {
+      flex: 1;
+      text-align: center;
+      background: #acb8c0;
+      border-radius: 10px;
+      align-items: center;
+      display:flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .box {
+      box-shadow: #31bab4;
+      width: 300px;
+      height: 100px;
+      text-align: left;
+      /* padding: 20px; */
+      background-color: aquamarine;
+      color: rgb(35, 17, 17);
+     }
+
+    .b1 {
+      background: #26eb96;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin-right: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .button {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>CSS Utility Simulator</h1>
+    <p class="sub">Change the inputs below to see how atomic classes combine to build UIs.</p>
+    <div class="nav">
+      <div><strong>MyLogo</strong></div>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="features">
+      <div class="feature-box">Feature 1</div>
+      <div class="feature-box">Feature 2</div>
+      <div class="feature-box">Feature 3</div>
+    </div>
+
+    <div class="main">
+      <div class="left">
+        <h2>Utility Controls</h2>
+
+        <div>
+          <label>Padding (Spacing)</label>
+          <select>
+            <option>Medium (p-8)</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Background Theme (Colors)</label>
+          <select>
+            <option>Primary Blue</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Text Size (Typography)</label>
+          <select>
+            <option>Large (text-xl)</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Corner Radius (Borders)</label>
+          <select>
+            <option>Square (rounded-none)</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Shadow (Depth)</label>
+          <select>
+            <option>Medium (shadow-md)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="box">
+          <h3>Alex Walker</h3>
+          <p>Full-Stack Web Developer building awesome things with Tailwind CSS.</p>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button class="b1">Submit</button>
+      <button class="b1">Hover Me Slowly!</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: antiquewhite; */
+        }
+        .container{
+            display: flex;
+            margin: 20px;
+            border-radius:10px ;
+            background-color:blueviolet;
+            padding:30px;
+            width: 50%;
+             gap: 30%;
+
+        }
+        .ageform{
+            display:flex;
+            flex-direction: column;
+            /* background-color: cornsilk; */
+            
+           
+        }
+        .card{
+            border-radius: 10px;
+            border: 2px solid #000;
+            padding:20px;
+        }
+        .agealine{display: flex;}
+        p{
+            display:inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="ageform">
+        <div>
+             <h2>Update Variables</h2> 
+             <div><label for="name"> Name(String):</label>
+                <div><input type="text" value="mg mg" id="name">
+                </div>
+            </div>
+        </div> 
+        
+        <h4>Age(Number):</h4>
+       <label for="age"></label>
+        <div>
+            <input type="number" value="23" id="age">
+        </div>
+        
+       <h4>VIP Stutus:</h4>
+        <label for="men"></label>
+        
+        <input type="checkbox" id="men" value="32">
+        <h4>Card Color</h4>
+        <label for="card"></label>
+       <input type="color" id="color">
+    </div>
+     
+    <div>
+        <h2>Live DOM Output</h2>
+        <div class="card">
+        <h5 id="nameoutput">Sample Name</h5>
+        <div class="agealine">
+        <p>Age:<span id="ageoutput">40</span></p>
+        </div>
+        </div>
+    </div>
+    </div>
+        <script>
+            
+        </script>
+   
+    
+</body>
+</html>
