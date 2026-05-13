@@ -11,7 +11,7 @@
             margin: 0;
             box-sizing: border-box;
         }
-
+ 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #e3f9ff;
@@ -160,6 +160,7 @@
         </div>
     </div>
     <script>
+
         const display = document.getElementById('display');
         const buttons = document.querySelectorAll('input[type="button"][data-value]');
         const clearButton = document.getElementById('clear');
@@ -185,7 +186,58 @@
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 display.value += button.dataset.value;
-            });
+                // Number & Operator Buttons
+buttons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const value = button.dataset.value;
+
+    const lastChar = display.value.slice(-1);
+
+
+
+    // Dot(.) နှစ်ခုမထပ်အောင်
+    if(value === '.'){
+
+      const lastNumber = display.value
+        .split(/[+\-*/]/)
+        .pop();
+
+      if(lastNumber.includes('.')){
+        return;
+      }
+
+    }
+
+
+
+    // Operator (+ - * /) နှစ်ခုမထပ်အောင်
+    if(
+      ['+', '-', '*', '/'].includes(value) &&
+      ['+', '-', '*', '/'].includes(lastChar)
+    ){
+      return;
+    }
+
+
+
+    // အစမှာ operator မရိုက်နိုင်
+    if(
+      display.value === '' &&
+      ['+', '*', '/'].includes(value)
+    ){
+      return;
+    }
+
+
+
+    display.value += value;
+
+  });
+
+});
+             });
         });
 
         clearButton.addEventListener('click', () => {
@@ -200,11 +252,16 @@
             display.value = safeEval(`${display.value}/100`);
         });
 
-        equalsButton.addEventListener('click', () => {
-            display.value = safeEval(display.value);
-        });
+       equalsButton.addEventListener('click', () => {
+
+            if (display.value.trim() === '') {
+                display.value = '0';
+                } else {
+                    display.value = safeEval(display.value);
+                        }
+
+            });
     </script>
 </body>
 </html>
 
-</html>
