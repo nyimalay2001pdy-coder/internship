@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Utility Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-purple-50 p-1">
+    <div class="mx-auto p-4">
+      <h1 class="text-purple-900 mb-4 text-5xl font-extrabold">
+        CSS Utility Simulator
+      </h1>
+      <p class="text-gray-600">
+        Change the inputs below to see how atomic classes combine to build UIs.
+      </p>
+      <nav class="bg-slate-800 py-3 mb-9 sticky top-0 z-10">
+        <div class="flex justify-between items-center px-7">
+          <div class="text-white font-bold text-lg">MyLogo</div>
+
+          <ul class="hidden md:flex gap-8 text-white">
+            <li><a href="#" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#" class="hover:text-gray-300">About</a></li>
+            <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+          </ul>
+          <button id="menuBtn" class="md:hidden text-white text-2xl">
+            <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+          </button>
+        </div>
+
+        <ul
+          id="mobileMenu"
+          class="hidden md:hidden text-white bg-slate-700 mt-2 flex-col gap-4 px-7 py-4"
+        >
+          <li><a href="#" class="hover:text-gray-300">Home</a></li>
+          <li><a href="#" class="hover:text-gray-300">About</a></li>
+          <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+      </nav>
+      <script>
+        let menuBtn = document.getElementById("menuBtn");
+        let mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        function toggleMenu() {
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden");
+          } else {
+            mobileMenu.classList.add("hidden");
+          }
+        }
+      </script>
+      <div class="gap-4 mb-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-zinc-700  p-4 rounded-lg text-white text-center">
+          Feature 1
+        </div>
+        <div class="bg-zinc-700  p-4 rounded-lg text-white text-center">
+          Feature 2
+        </div>
+        <div class="bg-zinc-700 p-4 rounded-lg text-white text-center">
+          Feature 3
+        </div>
+      </div>
+
+      <div class="gap-8  grid sm:grid-cols-1 md:grid-cols-2 rounded-lg">
+        <div class="left bg-red-50 p-4 rounded-lg">
+          <h2 class="font-bold text-3xl mb-6">Utility Controls</h2>
+
+          <div class="mb-4">
+            <label class="block mb-4 text-base pb-1">Padding (Spacing)</label>
+            <select
+              class="block w-full p-2 border border-gray-300 rounded text-sm"
+            >
+              <option>Medium (p-4)</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-4 text-base"
+              >Background Theme (Colors)</label
+            >
+            <select
+              class="block w-full p-2 border border-gray-300 rounded text-sm"
+            >
+              <option>Primary Blue</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-4 text-base">Text Size (Typography)</label>
+            <select
+              class="block w-full p-2 border border-gray-300 rounded text-sm"
+            >
+              <option>Large (text-xl)</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-4 text-base">Corner Radius (Borders)</label>
+            <select
+              class="block w-full p-2 border border-gray-300 rounded text-sm"
+            >
+              <option>Founded(rounded-lg)</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-4 text-base">Shadow (Depth)</label>
+            <select
+              class="block w-full p-2 border border-gray-300 rounded text-sm"
+            >
+              <option>Medium (shadow-md)</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="bg-slate-300 align-center p-20 rounded-lg">
+            <div class="p-4 bg-gray-100 rounded-lg shadow-md mb-3">
+              <h3>Alex Walker</h3>
+              <p>
+                Full-Stack Web Developer building awesome things with Tailwind
+                CSS.
+              </p>
+            </div>
+          </div>
+          <div class="bg-black text-green-500 mt-10 rounded-lg p-1">
+            <div class="flex">
+              <button class="ml-auto text-white bg-gray-600 px-3 py-1 rounded">
+                HTML Output
+              </button>
+            </div>
+
+            <!-- <div class="flex justify-end">
+              <button class=" text-white bg-gray-300 px-3 py-1 rounded">
+                HTML Output
+              </button>
+            </div> -->
+              <!-- <div class="relative top-0 left-0 p-2">
+              <button class=" text-white bg-gray-300 px-3 py-1 rounded">
+                HTML Output
+              </button>
+            </div>  -->
+            <div class="text-green-400  p-10">
+              &lt;div class="p-4 bg-blue-600 text-white border border- 
+              blue-700 text-xl rounded-lg shadow-md" &gt;
+                  &lt;h3 class="font-bold mb-2"&gt;Alex Walker&lt;/h3&gt;
+                  &lt;p class="opacity-80"&gt;Full-Stack Web Developer 
+               building awesome things with Tailwind CSS.&lt;/p&gt;
+                &lt;/div&gt;
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Submit
+        </button>
+        <span>Read More</span>
+        <button
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Hover Me Slowly!
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
